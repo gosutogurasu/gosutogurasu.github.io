@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Redis笔记整理 | TaoLe</title><meta name="author" content="taole"><meta name="copyright" content="taole"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="大纲 Redis本质：内存型键值对数据库  基本数据类型 String Hash List Set ZSet 特殊类型   持久化机制 RDB（快照） AOF（追加日志）     Redis基本数据类型String（字符串）123456789101112131415161718192021222324🔑 **数据结构**  二进制安全，可存储文本&#x2F;数字&#x2F;序列化对象，最大512MB💻 **核心命">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Redis笔记整理 | TaoLe</title><meta name="author" content="taole"><meta name="copyright" content="taole"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="大纲 Redis本质：内存型键值对数据库  基本数据类型 String Hash List Set ZSet 特殊类型   持久化机制 RDB（快照） AOF（追加日志）     Redis基本数据类型String（字符串）🔑 数据结构二进制安全，可存储文本&#x2F;数字&#x2F;序列化对象，最大512MB 💻 核心命令    SET key value [EX seconds] 设置带过">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis笔记整理">
 <meta property="og:url" content="https://example.com/2025/02/25/Redis%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="TaoLe">
-<meta property="og:description" content="大纲 Redis本质：内存型键值对数据库  基本数据类型 String Hash List Set ZSet 特殊类型   持久化机制 RDB（快照） AOF（追加日志）     Redis基本数据类型String（字符串）123456789101112131415161718192021222324🔑 **数据结构**  二进制安全，可存储文本&#x2F;数字&#x2F;序列化对象，最大512MB💻 **核心命">
+<meta property="og:description" content="大纲 Redis本质：内存型键值对数据库  基本数据类型 String Hash List Set ZSet 特殊类型   持久化机制 RDB（快照） AOF（追加日志）     Redis基本数据类型String（字符串）🔑 数据结构二进制安全，可存储文本&#x2F;数字&#x2F;序列化对象，最大512MB 💻 核心命令    SET key value [EX seconds] 设置带过">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://example.com/img/Rhine-Life.gif">
 <meta property="article:published_time" content="2025-02-25T12:23:37.000Z">
-<meta property="article:modified_time" content="2025-02-25T12:36:42.898Z">
+<meta property="article:modified_time" content="2025-02-25T12:41:49.009Z">
 <meta property="article:author" content="taole">
 <meta property="article:tag" content="Redis 数据库">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "https://example.com/2025/02/25/Redis%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/",
   "image": "https://example.com/img/Rhine-Life.gif",
   "datePublished": "2025-02-25T12:23:37.000Z",
-  "dateModified": "2025-02-25T12:36:42.898Z",
+  "dateModified": "2025-02-25T12:41:49.009Z",
   "author": [
     {
       "@type": "Person",
@@ -160,7 +160,7 @@
   isToc: true,
   pageType: 'post'
 }</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="TaoLe" type="application/atom+xml">
-</head><body><div id="web_bg" style="background-image: url(/img/background_Amy.webp);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/archive.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">TaoLe</span></a><a class="nav-page-title" href="/"><span class="site-name">Redis笔记整理</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Redis笔记整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-25T12:23:37.000Z" title="发表于 2025-02-25 20:23:37">2025-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-25T12:36:42.898Z" title="更新于 2025-02-25 20:36:42">2025-02-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><ul>
+</head><body><div id="web_bg" style="background-image: url(/img/background_Amy.webp);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/archive.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">TaoLe</span></a><a class="nav-page-title" href="/"><span class="site-name">Redis笔记整理</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Redis笔记整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-25T12:23:37.000Z" title="发表于 2025-02-25 20:23:37">2025-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-25T12:41:49.009Z" title="更新于 2025-02-25 20:41:49">2025-02-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><ul>
 <li><p>Redis本质：内存型键值对数据库</p>
 <ul>
 <li>基本数据类型<ul>
@@ -179,20 +179,148 @@
 </li>
 </ul>
 <hr>
-<h2 id="Redis基本数据类型"><a href="#Redis基本数据类型" class="headerlink" title="Redis基本数据类型"></a>Redis基本数据类型</h2><h3 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a><strong>String（字符串）</strong></h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">🔑 <span class="strong">**数据结构**</span>  </span><br><span class="line">二进制安全，可存储文本/数字/序列化对象，最大512MB</span><br><span class="line"></span><br><span class="line">💻 <span class="strong">**核心命令**</span>  </span><br><span class="line"><span class="bullet">-</span> <span class="code">`SET key value [EX seconds]`</span> 设置带过期时间的值</span><br><span class="line"><span class="bullet">-</span> <span class="code">`GET key`</span> </span><br><span class="line"><span class="bullet">-</span> <span class="code">`INCR/DECR key`</span> 原子计数器</span><br><span class="line"><span class="bullet">-</span> <span class="code">`MSET/MGET`</span> 批量操作</span><br><span class="line"><span class="bullet">-</span> <span class="code">`SETBIT/GETBIT`</span> 位操作</span><br><span class="line"></span><br><span class="line">🎯 <span class="strong">**应用场景**</span>  </span><br><span class="line"><span class="bullet">-</span> 缓存HTML片段/序列化对象</span><br><span class="line"><span class="bullet">-</span> 分布式锁（SETNX）</span><br><span class="line"><span class="bullet">-</span> 限流器（INCR+EXPIRE）</span><br><span class="line"><span class="bullet">-</span> 位统计（日活用户Bitmap）</span><br><span class="line"></span><br><span class="line">⚠️ <span class="strong">**注意事项**</span>  </span><br><span class="line"><span class="bullet">-</span> Value超过10KB需警惕大Key问题</span><br><span class="line"><span class="bullet">-</span> INCR存在溢出风险（最大值9223372036854775807）</span><br><span class="line"></span><br><span class="line">🔧 <span class="strong">**底层原理**</span>  </span><br><span class="line"><span class="bullet">-</span> 动态字符串SDS（O(1)获取长度，预分配空间）</span><br><span class="line"><span class="bullet">-</span> 数值类型自动转int存储优化</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<h2 id="Redis基本数据类型"><a href="#Redis基本数据类型" class="headerlink" title="Redis基本数据类型"></a>Redis基本数据类型</h2><h3 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a><strong>String（字符串）</strong></h3><p>🔑 <strong>数据结构</strong><br>二进制安全，可存储文本&#x2F;数字&#x2F;序列化对象，最大512MB</p>
+<p>💻 <strong>核心命令</strong>  </p>
+<ul>
+<li><code>SET key value [EX seconds]</code> 设置带过期时间的值</li>
+<li><code>GET key</code> </li>
+<li><code>INCR/DECR key</code> 原子计数器</li>
+<li><code>MSET/MGET</code> 批量操作</li>
+<li><code>SETBIT/GETBIT</code> 位操作</li>
+</ul>
+<p>🎯 <strong>应用场景</strong>  </p>
+<ul>
+<li>缓存HTML片段&#x2F;序列化对象</li>
+<li>分布式锁（SETNX）</li>
+<li>限流器（INCR+EXPIRE）</li>
+<li>位统计（日活用户Bitmap）</li>
+</ul>
+<p>⚠️ <strong>注意事项</strong>  </p>
+<ul>
+<li>Value超过10KB需警惕大Key问题</li>
+<li>INCR存在溢出风险（最大值9223372036854775807）</li>
+</ul>
+<p>🔧 <strong>底层原理</strong>  </p>
+<ul>
+<li>动态字符串SDS（O(1)获取长度，预分配空间）</li>
+<li>数值类型自动转int存储优化</li>
+</ul>
 <hr>
-<h3 id="Hash（哈希表）"><a href="#Hash（哈希表）" class="headerlink" title="Hash（哈希表）"></a><strong>Hash（哈希表）</strong></h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">🔑 <span class="strong">**数据结构**</span>  </span><br><span class="line">字段值对的无序集合，适合存储对象</span><br><span class="line"></span><br><span class="line">💻 <span class="strong">**核心命令**</span>  </span><br><span class="line"><span class="bullet">-</span> <span class="code">`HSET key field value`</span></span><br><span class="line"><span class="bullet">-</span> <span class="code">`HGET key field`</span></span><br><span class="line"><span class="bullet">-</span> <span class="code">`HGETALL key`</span> （慎用大Hash）</span><br><span class="line"><span class="bullet">-</span> <span class="code">`HINCRBY key field increment`</span></span><br><span class="line"></span><br><span class="line">🎯 <span class="strong">**应用场景**</span>  </span><br><span class="line"><span class="bullet">-</span> 用户属性存储（用户ID为key，字段对应属性）</span><br><span class="line"><span class="bullet">-</span> 商品购物车（商品ID:数量）</span><br><span class="line"><span class="bullet">-</span> 配置中心（环境变量分组存储）</span><br><span class="line"></span><br><span class="line">⚠️ <span class="strong">**注意事项**</span>  </span><br><span class="line"><span class="bullet">-</span> 字段数超过500建议拆分多个Hash</span><br><span class="line"><span class="bullet">-</span> HGETALL可能引发阻塞，推荐用HSCAN</span><br><span class="line"></span><br><span class="line">🔧 <span class="strong">**底层原理**</span>  </span><br><span class="line"><span class="bullet">-</span> 小Hash使用ziplist（连续内存结构）</span><br><span class="line"><span class="bullet">-</span> 大Hash转为hashtable（dict结构）</span><br><span class="line"></span><br><span class="line">📌 <span class="strong">**实战技巧**</span>  </span><br><span class="line"><span class="bullet">-</span> 使用<span class="code">`HSCAN`</span>代替<span class="code">`HGETALL`</span>分批次获取大数据量</span><br></pre></td></tr></table></figure>
-
+<h3 id="Hash（哈希表）"><a href="#Hash（哈希表）" class="headerlink" title="Hash（哈希表）"></a><strong>Hash（哈希表）</strong></h3><p>🔑 <strong>数据结构</strong><br>双向链表，元素可重复，按插入顺序排序</p>
+<p>💻 <strong>核心命令</strong>  </p>
+<ul>
+<li><code>LPUSH/RPUSH key element</code></li>
+<li><code>LPOP/RPOP key</code></li>
+<li><code>BLPOP/BRPOP</code> 阻塞式弹出</li>
+<li><code>LRANGE key start stop</code></li>
+</ul>
+<p>🎯 <strong>应用场景</strong>  </p>
+<ul>
+<li>消息队列（结合BLPOP实现）</li>
+<li>最新消息排行（LPUSH+LRANGE）</li>
+<li>分页查询（LRANGE实现）</li>
+</ul>
+<p>⚠️ <strong>注意事项</strong>  </p>
+<ul>
+<li>长列表（元素数&gt;1000）查询性能下降</li>
+<li>多个消费者场景需做消息ACK确认</li>
+</ul>
+<p>🔧 <strong>底层原理</strong>  </p>
+<ul>
+<li>快速链表quicklist（ziplist+linkedlist结合）</li>
+<li>节点元素上限可通过list-max-ziplist-size配置</li>
+</ul>
+<p>📌 <strong>实战技巧</strong>  </p>
+<ul>
+<li>使用<code>LTRIM</code>维护固定长度队列</li>
+</ul>
 <hr>
-<h3 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a><strong>List（列表）</strong></h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">🔑 <span class="strong">**数据结构**</span>  </span><br><span class="line">双向链表，元素可重复，按插入顺序排序</span><br><span class="line"></span><br><span class="line">💻 <span class="strong">**核心命令**</span>  </span><br><span class="line"><span class="bullet">-</span> <span class="code">`LPUSH/RPUSH key element`</span></span><br><span class="line"><span class="bullet">-</span> <span class="code">`LPOP/RPOP key`</span></span><br><span class="line"><span class="bullet">-</span> <span class="code">`BLPOP/BRPOP`</span> 阻塞式弹出</span><br><span class="line"><span class="bullet">-</span> <span class="code">`LRANGE key start stop`</span></span><br><span class="line"></span><br><span class="line">🎯 <span class="strong">**应用场景**</span>  </span><br><span class="line"><span class="bullet">-</span> 消息队列（结合BLPOP实现）</span><br><span class="line"><span class="bullet">-</span> 最新消息排行（LPUSH+LRANGE）</span><br><span class="line"><span class="bullet">-</span> 分页查询（LRANGE实现）</span><br><span class="line"></span><br><span class="line">⚠️ <span class="strong">**注意事项**</span>  </span><br><span class="line"><span class="bullet">-</span> 长列表（元素数&gt;1000）查询性能下降</span><br><span class="line"><span class="bullet">-</span> 多个消费者场景需做消息ACK确认</span><br><span class="line"></span><br><span class="line">🔧 <span class="strong">**底层原理**</span>  </span><br><span class="line"><span class="bullet">-</span> 快速链表quicklist（ziplist+linkedlist结合）</span><br><span class="line"><span class="bullet">-</span> 节点元素上限可通过list-max-ziplist-size配置</span><br><span class="line"></span><br><span class="line">📌 <span class="strong">**实战技巧**</span>  </span><br><span class="line"><span class="bullet">-</span> 使用<span class="code">`LTRIM`</span>维护固定长度队列</span><br></pre></td></tr></table></figure>
-
+<h3 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a><strong>List（列表）</strong></h3><p>🔑 <strong>数据结构</strong><br>双向链表，元素可重复，按插入顺序排序</p>
+<p>💻 <strong>核心命令</strong>  </p>
+<ul>
+<li><code>LPUSH/RPUSH key element</code></li>
+<li><code>LPOP/RPOP key</code></li>
+<li><code>BLPOP/BRPOP</code> 阻塞式弹出</li>
+<li><code>LRANGE key start stop</code></li>
+</ul>
+<p>🎯 <strong>应用场景</strong>  </p>
+<ul>
+<li>消息队列（结合BLPOP实现）</li>
+<li>最新消息排行（LPUSH+LRANGE）</li>
+<li>分页查询（LRANGE实现）</li>
+</ul>
+<p>⚠️ <strong>注意事项</strong>  </p>
+<ul>
+<li>长列表（元素数&gt;1000）查询性能下降</li>
+<li>多个消费者场景需做消息ACK确认</li>
+</ul>
+<p>🔧 <strong>底层原理</strong>  </p>
+<ul>
+<li>快速链表quicklist（ziplist+linkedlist结合）</li>
+<li>节点元素上限可通过list-max-ziplist-size配置</li>
+</ul>
+<p>📌 <strong>实战技巧</strong>  </p>
+<ul>
+<li>使用<code>LTRIM</code>维护固定长度队列</li>
+</ul>
 <hr>
-<h3 id="Set（集合）"><a href="#Set（集合）" class="headerlink" title="Set（集合）"></a><strong>Set（集合）</strong></h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">🔑 <span class="strong">**数据结构**</span>  </span><br><span class="line">无序且元素唯一的集合，支持交并差运算</span><br><span class="line"></span><br><span class="line">💻 <span class="strong">**核心命令**</span>  </span><br><span class="line"><span class="bullet">-</span> <span class="code">`SADD key member`</span></span><br><span class="line"><span class="bullet">-</span> <span class="code">`SISMEMBER key member`</span></span><br><span class="line"><span class="bullet">-</span> <span class="code">`SINTER key1 key2`</span> 交集</span><br><span class="line"><span class="bullet">-</span> <span class="code">`SUNIONSTORE dest key1 key2`</span> 并集存储</span><br><span class="line"></span><br><span class="line">🎯 <span class="strong">**应用场景**</span>  </span><br><span class="line"><span class="bullet">-</span> 标签系统（用户标签集合）</span><br><span class="line"><span class="bullet">-</span> 共同关注（SINTER计算交集）</span><br><span class="line"><span class="bullet">-</span> UV统计（去重计数）</span><br><span class="line"></span><br><span class="line">⚠️ <span class="strong">**注意事项**</span>  </span><br><span class="line"><span class="bullet">-</span> SMEMBERS全量获取可能阻塞，优先用SSCAN</span><br><span class="line"><span class="bullet">-</span> 超大集合（&gt;1W元素）交并运算消耗内存激增</span><br><span class="line"></span><br><span class="line">🔧 <span class="strong">**底层原理**</span>  </span><br><span class="line"><span class="bullet">-</span> 小集合用intset（整数数组）</span><br><span class="line"><span class="bullet">-</span> 大集合转为hashtable存储</span><br><span class="line"></span><br><span class="line">📌 <span class="strong">**实战技巧**</span>  </span><br><span class="line"><span class="bullet">-</span> 使用<span class="code">`SPOP`</span>实现随机抽奖功能</span><br></pre></td></tr></table></figure>
-
+<h3 id="Set（集合）"><a href="#Set（集合）" class="headerlink" title="Set（集合）"></a><strong>Set（集合）</strong></h3><p>🔑 <strong>数据结构</strong><br>无序且元素唯一的集合，支持交并差运算</p>
+<p>💻 <strong>核心命令</strong>  </p>
+<ul>
+<li><code>SADD key member</code></li>
+<li><code>SISMEMBER key member</code></li>
+<li><code>SINTER key1 key2</code> 交集</li>
+<li><code>SUNIONSTORE dest key1 key2</code> 并集存储</li>
+</ul>
+<p>🎯 <strong>应用场景</strong>  </p>
+<ul>
+<li>标签系统（用户标签集合）</li>
+<li>共同关注（SINTER计算交集）</li>
+<li>UV统计（去重计数）</li>
+</ul>
+<p>⚠️ <strong>注意事项</strong>  </p>
+<ul>
+<li>SMEMBERS全量获取可能阻塞，优先用SSCAN</li>
+<li>超大集合（&gt;1W元素）交并运算消耗内存激增</li>
+</ul>
+<p>🔧 <strong>底层原理</strong>  </p>
+<ul>
+<li>小集合用intset（整数数组）</li>
+<li>大集合转为hashtable存储</li>
+</ul>
+<p>📌 <strong>实战技巧</strong>  </p>
+<ul>
+<li>使用<code>SPOP</code>实现随机抽奖功能</li>
+</ul>
 <hr>
-<h3 id="ZSet（有序集合）"><a href="#ZSet（有序集合）" class="headerlink" title="ZSet（有序集合）"></a><strong>ZSet（有序集合）</strong></h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">🔑 <span class="strong">**数据结构**</span>  </span><br><span class="line">唯一成员+排序权重（score）的有序结构</span><br><span class="line"></span><br><span class="line">💻 <span class="strong">**核心命令**</span>  </span><br><span class="line"><span class="bullet">-</span> <span class="code">`ZADD key score member`</span></span><br><span class="line"><span class="bullet">-</span> <span class="code">`ZRANGE key start stop [WITHSCORES]`</span></span><br><span class="line"><span class="bullet">-</span> <span class="code">`ZRANK key member`</span> 获取排名</span><br><span class="line"><span class="bullet">-</span> <span class="code">`ZREVRANGEBYSCORE`</span> 按分数范围查询</span><br><span class="line"></span><br><span class="line">🎯 <span class="strong">**应用场景**</span>  </span><br><span class="line"><span class="bullet">-</span> 实时排行榜（直播打赏排行）</span><br><span class="line"><span class="bullet">-</span> 延迟队列（score存执行时间戳）</span><br><span class="line"><span class="bullet">-</span> 范围查询（地理位置附近的人）</span><br><span class="line"></span><br><span class="line">⚠️ <span class="strong">**注意事项**</span>  </span><br><span class="line"><span class="bullet">-</span> Score使用双精度浮点数，存在精度丢失风险</span><br><span class="line"><span class="bullet">-</span> 大数据量范围查询优先用<span class="code">`ZSCAN`</span></span><br><span class="line"></span><br><span class="line">🔧 <span class="strong">**底层原理**</span>  </span><br><span class="line"><span class="bullet">-</span> ziplist（元素数&lt;128且value&lt;64字节时）</span><br><span class="line"><span class="bullet">-</span> skiplist+dict组合结构（跳跃表维护顺序，字典快速查找）</span><br><span class="line"></span><br><span class="line">📌 <span class="strong">**实战技巧**</span>  </span><br><span class="line"><span class="bullet">-</span> 使用<span class="code">`ZUNIONSTORE`</span>实现多维度加权排序</span><br></pre></td></tr></table></figure>
-
+<h3 id="ZSet（有序集合）"><a href="#ZSet（有序集合）" class="headerlink" title="ZSet（有序集合）"></a><strong>ZSet（有序集合）</strong></h3><p>🔑 <strong>数据结构</strong><br>唯一成员+排序权重（score）的有序结构</p>
+<p>💻 <strong>核心命令</strong>  </p>
+<ul>
+<li><code>ZADD key score member</code></li>
+<li><code>ZRANGE key start stop [WITHSCORES]</code></li>
+<li><code>ZRANK key member</code> 获取排名</li>
+<li><code>ZREVRANGEBYSCORE</code> 按分数范围查询</li>
+</ul>
+<p>🎯 <strong>应用场景</strong>  </p>
+<ul>
+<li>实时排行榜（直播打赏排行）</li>
+<li>延迟队列（score存执行时间戳）</li>
+<li>范围查询（地理位置附近的人）</li>
+</ul>
+<p>⚠️ <strong>注意事项</strong>  </p>
+<ul>
+<li>Score使用双精度浮点数，存在精度丢失风险</li>
+<li>大数据量范围查询优先用<code>ZSCAN</code></li>
+</ul>
+<p>🔧 <strong>底层原理</strong>  </p>
+<ul>
+<li>ziplist（元素数&lt;128且value&lt;64字节时）</li>
+<li>skiplist+dict组合结构（跳跃表维护顺序，字典快速查找）</li>
+</ul>
+<p>📌 <strong>实战技巧</strong>  </p>
+<ul>
+<li>使用<code>ZUNIONSTORE</code>实现多维度加权排序</li>
+</ul>
 <hr>
 <h3 id="数据类型选择决策树"><a href="#数据类型选择决策树" class="headerlink" title="数据类型选择决策树"></a><strong>数据类型选择决策树</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    A[需要排序?] --&gt;|Yes| B(ZSet)</span><br><span class="line">    A --&gt;|No| C&#123;需要唯一性?&#125;</span><br><span class="line">    C --&gt;|Yes| D(Set)</span><br><span class="line">    C --&gt;|No| E&#123;数据结构形态?&#125;</span><br><span class="line">    E --&gt;|Key-Value| F(Hash)</span><br><span class="line">    E --&gt;|单值/计数器| G(String)</span><br><span class="line">    E --&gt;|队列/栈| H(List)</span><br></pre></td></tr></table></figure>
 
