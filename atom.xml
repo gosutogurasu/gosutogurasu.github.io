@@ -3,11 +3,11 @@
   <title>TaoLe</title>
   
   
-  <link href="https://github.com/gosutogurasu/gosutogurasu.github.io/atom.xml" rel="self"/>
+  <link href="https://gosutogurasu.github.io/atom.xml" rel="self"/>
   
-  <link href="https://github.com/gosutogurasu/gosutogurasu.github.io/"/>
+  <link href="https://gosutogurasu.github.io/"/>
   <updated>2025-02-25T08:52:16.125Z</updated>
-  <id>https://github.com/gosutogurasu/gosutogurasu.github.io/</id>
+  <id>https://gosutogurasu.github.io/</id>
   
   <author>
     <name>taole</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/gosutogurasu/gosutogurasu.github.io/2025/02/25/hello-world/"/>
-    <id>https://github.com/gosutogurasu/gosutogurasu.github.io/2025/02/25/hello-world/</id>
+    <link href="https://gosutogurasu.github.io/2025/02/25/hello-world/"/>
+    <id>https://gosutogurasu.github.io/2025/02/25/hello-world/</id>
     <published>2025-02-25T08:52:16.125Z</published>
     <updated>2025-02-25T08:52:16.125Z</updated>
     
