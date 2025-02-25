@@ -1,2 +1,2 @@
-https://gosutogurasu.github.io/2025/02/25/hello-world/
-https://gosutogurasu.github.io/
+https://example.com/2025/02/25/hello-world/
+https://example.com/
