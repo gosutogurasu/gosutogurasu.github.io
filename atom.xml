@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2025-02-25T12:41:49.009Z</updated>
+  <updated>2025-02-25T12:43:27.617Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -17,11 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LC_20250225</title>
+    <link href="https://example.com/2025/02/25/LC-20250225/"/>
+    <id>https://example.com/2025/02/25/LC-20250225/</id>
+    <published>2025-02-25T12:43:27.000Z</published>
+    <updated>2025-02-25T12:43:27.617Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Redis笔记整理</title>
     <link href="https://example.com/2025/02/25/Redis%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/"/>
     <id>https://example.com/2025/02/25/Redis%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/</id>
     <published>2025-02-25T12:23:37.000Z</published>
-    <updated>2025-02-25T12:41:49.009Z</updated>
+    <updated>2025-02-25T12:48:37.915Z</updated>
     
     <content type="html"><![CDATA[<h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><ul><li><p>Redis本质：内存型键值对数据库</p><ul><li>基本数据类型<ul><li>String</li><li>Hash</li><li>List</li><li>Set</li><li>ZSet</li><li>特殊类型</li></ul></li><li>持久化机制<ul><li>RDB（快照）</li><li>AOF（追加日志）</li></ul></li></ul><hr><h2 id="Redis基本数据类型"><a href="#Redis基本数据类型" class="headerlink" title="Redis基本数据类型"></a>Redis基本数据类型</h2><h3 id="String（字符串）"><a href="#String（字符串）" class="headerlink" title="String（字符串）"></a><strong>String（字符串）</strong></h3><p>🔑 <strong>数据结构</strong><br>二进制安全，可存储文本&#x2F;数字&#x2F;序列化对象，最大512MB</p><p>💻 <strong>核心命令</strong>  </p><ul><li><code>SET key value [EX seconds]</code> 设置带过期时间的值</li><li><code>GET key</code> </li><li><code>INCR/DECR key</code> 原子计数器</li><li><code>MSET/MGET</code> 批量操作</li><li><code>SETBIT/GETBIT</code> 位操作</li></ul><p>🎯 <strong>应用场景</strong>  </p><ul><li>缓存HTML片段&#x2F;序列化对象</li><li>分布式锁（SETNX）</li><li>限流器（INCR+EXPIRE）</li><li>位统计（日活用户Bitmap）</li></ul><p>⚠️ <strong>注意事项</strong>  </p><ul><li>Value超过10KB需警惕大Key问题</li><li>INCR存在溢出风险（最大值9223372036854775807）</li></ul><p>🔧 <strong>底层原理</strong>  </p><ul><li>动态字符串SDS（O(1)获取长度，预分配空间）</li><li>数值类型自动转int存储优化</li></ul><hr><h3 id="Hash（哈希表）"><a href="#Hash（哈希表）" class="headerlink" title="Hash（哈希表）"></a><strong>Hash（哈希表）</strong></h3><p>🔑 <strong>数据结构</strong><br>双向链表，元素可重复，按插入顺序排序</p><p>💻 <strong>核心命令</strong>  </p><ul><li><code>LPUSH/RPUSH key element</code></li><li><code>LPOP/RPOP key</code></li><li><code>BLPOP/BRPOP</code> 阻塞式弹出</li><li><code>LRANGE key start stop</code></li></ul><p>🎯 <strong>应用场景</strong>  </p><ul><li>消息队列（结合BLPOP实现）</li><li>最新消息排行（LPUSH+LRANGE）</li><li>分页查询（LRANGE实现）</li></ul><p>⚠️ <strong>注意事项</strong>  </p><ul><li>长列表（元素数&gt;1000）查询性能下降</li><li>多个消费者场景需做消息ACK确认</li></ul><p>🔧 <strong>底层原理</strong>  </p><ul><li>快速链表quicklist（ziplist+linkedlist结合）</li><li>节点元素上限可通过list-max-ziplist-size配置</li></ul><p>📌 <strong>实战技巧</strong>  </p><ul><li>使用<code>LTRIM</code>维护固定长度队列</li></ul><hr><h3 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a><strong>List（列表）</strong></h3><p>🔑 <strong>数据结构</strong><br>双向链表，元素可重复，按插入顺序排序</p><p>💻 <strong>核心命令</strong>  </p><ul><li><code>LPUSH/RPUSH key element</code></li><li><code>LPOP/RPOP key</code></li><li><code>BLPOP/BRPOP</code> 阻塞式弹出</li><li><code>LRANGE key start stop</code></li></ul><p>🎯 <strong>应用场景</strong>  </p><ul><li>消息队列（结合BLPOP实现）</li><li>最新消息排行（LPUSH+LRANGE）</li><li>分页查询（LRANGE实现）</li></ul><p>⚠️ <strong>注意事项</strong>  </p><ul><li>长列表（元素数&gt;1000）查询性能下降</li><li>多个消费者场景需做消息ACK确认</li></ul><p>🔧 <strong>底层原理</strong>  </p><ul><li>快速链表quicklist（ziplist+linkedlist结合）</li><li>节点元素上限可通过list-max-ziplist-size配置</li></ul><p>📌 <strong>实战技巧</strong>  </p><ul><li>使用<code>LTRIM</code>维护固定长度队列</li></ul><hr><h3 id="Set（集合）"><a href="#Set（集合）" class="headerlink" title="Set（集合）"></a><strong>Set（集合）</strong></h3><p>🔑 <strong>数据结构</strong><br>无序且元素唯一的集合，支持交并差运算</p><p>💻 <strong>核心命令</strong>  </p><ul><li><code>SADD key member</code></li><li><code>SISMEMBER key member</code></li><li><code>SINTER key1 key2</code> 交集</li><li><code>SUNIONSTORE dest key1 key2</code> 并集存储</li></ul><p>🎯 <strong>应用场景</strong>  </p><ul><li>标签系统（用户标签集合）</li><li>共同关注（SINTER计算交集）</li><li>UV统计（去重计数）</li></ul><p>⚠️ <strong>注意事项</strong>  </p><ul><li>SMEMBERS全量获取可能阻塞，优先用SSCAN</li><li>超大集合（&gt;1W元素）交并运算消耗内存激增</li></ul><p>🔧 <strong>底层原理</strong>  </p><ul><li>小集合用intset（整数数组）</li><li>大集合转为hashtable存储</li></ul><p>📌 <strong>实战技巧</strong>  </p><ul><li>使用<code>SPOP</code>实现随机抽奖功能</li></ul><hr><h3 id="ZSet（有序集合）"><a href="#ZSet（有序集合）" class="headerlink" title="ZSet（有序集合）"></a><strong>ZSet（有序集合）</strong></h3><p>🔑 <strong>数据结构</strong><br>唯一成员+排序权重（score）的有序结构</p><p>💻 <strong>核心命令</strong>  </p><ul><li><code>ZADD key score member</code></li><li><code>ZRANGE key start stop [WITHSCORES]</code></li><li><code>ZRANK key member</code> 获取排名</li><li><code>ZREVRANGEBYSCORE</code> 按分数范围查询</li></ul><p>🎯 <strong>应用场景</strong>  </p><ul><li>实时排行榜（直播打赏排行）</li><li>延迟队列（score存执行时间戳）</li><li>范围查询（地理位置附近的人）</li></ul><p>⚠️ <strong>注意事项</strong>  </p><ul><li>Score使用双精度浮点数，存在精度丢失风险</li><li>大数据量范围查询优先用<code>ZSCAN</code></li></ul><p>🔧 <strong>底层原理</strong>  </p><ul><li>ziplist（元素数&lt;128且value&lt;64字节时）</li><li>skiplist+dict组合结构（跳跃表维护顺序，字典快速查找）</li></ul><p>📌 <strong>实战技巧</strong>  </p><ul><li>使用<code>ZUNIONSTORE</code>实现多维度加权排序</li></ul><hr><h3 id="数据类型选择决策树"><a href="#数据类型选择决策树" class="headerlink" title="数据类型选择决策树"></a><strong>数据类型选择决策树</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">    A[需要排序?] --&gt;|Yes| B(ZSet)</span><br><span class="line">    A --&gt;|No| C&#123;需要唯一性?&#125;</span><br><span class="line">    C --&gt;|Yes| D(Set)</span><br><span class="line">    C --&gt;|No| E&#123;数据结构形态?&#125;</span><br><span class="line">    E --&gt;|Key-Value| F(Hash)</span><br><span class="line">    E --&gt;|单值/计数器| G(String)</span><br><span class="line">    E --&gt;|队列/栈| H(List)</span><br></pre></td></tr></table></figure><hr><h3 id="对比表"><a href="#对比表" class="headerlink" title="对比表"></a><strong>对比表</strong></h3><table><thead><tr><th></th><th>唯一性</th><th>排序</th><th>时间复杂度</th><th>典型误用场景</th></tr></thead><tbody><tr><td><strong>Set</strong></td><td>是</td><td>否</td><td>O(1)</td><td>用SINTER计算超大集合</td></tr><tr><td><strong>ZSet</strong></td><td>是</td><td>是</td><td>O(logN)</td><td>Score精度丢失问题</td></tr><tr><td><strong>List</strong></td><td>否</td><td>插入序</td><td>O(N)</td><td>长列表LRANGE全量获取</td></tr></tbody></table><hr><p>建议结合具体业务场景练习数据类型组合使用，例如：</p><ul><li><strong>社交APP场景</strong>：用ZSet维护好友亲密度排行，Hash存储用户资料，Set管理共同好友</li><li><strong>电商系统场景</strong>：用String缓存商品详情，Hash存储购物车信息，ZSet实现销量排行榜</li></ul></li></ul>]]></content>
     
@@ -39,7 +52,9 @@
     
     
     
-    <category term="Redis 数据库" scheme="https://example.com/tags/Redis-%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="Redis" scheme="https://example.com/tags/Redis/"/>
+    
+    <category term="数据库" scheme="https://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   

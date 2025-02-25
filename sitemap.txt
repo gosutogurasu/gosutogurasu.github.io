@@ -1,5 +1,7 @@
 https://example.com/2025/02/25/Redis%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/
+https://example.com/2025/02/25/LC-20250225/
 https://example.com/2025/02/25/TypeScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/
 https://example.com/
 https://example.com/tags/TypeScript/
-https://example.com/tags/Redis-%E6%95%B0%E6%8D%AE%E5%BA%93/
+https://example.com/tags/Redis/
+https://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/
