@@ -1,3 +1,4 @@
+https://example.com/2025/02/26/LC-20250226/
 https://example.com/2025/02/26/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/
 https://example.com/2025/02/25/LC-20250225/
 https://example.com/2025/02/25/Redis%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86/
