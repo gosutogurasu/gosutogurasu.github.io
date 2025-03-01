@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2025-02-26T13:02:05.943Z</updated>
+  <updated>2025-03-01T06:08:32.470Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LC_20250301</title>
+    <link href="https://example.com/2025/03/01/LC-20250301/"/>
+    <id>https://example.com/2025/03/01/LC-20250301/</id>
+    <published>2025-03-01T05:24:23.000Z</published>
+    <updated>2025-03-01T06:08:32.470Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="LC-1290"><a href="#LC-1290" class="headerlink" title="LC_1290"></a>LC_1290</h2><blockquote><p>给你一个单链表的引用结点 <code>head</code>。链表中每个结点的值不是 0 就是 1。已知此链表是一个整数数字的二进制表示形式。</p><p>请你返回该链表所表示数字的 <strong>十进制值</strong> 。</p></blockquote><h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a><strong>题解</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getDecimalValue</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="comment">// 思路： 判断下一位如何处理，为0，总和+1，指针移动时，总和*2</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> head.val == <span class="number">0</span> ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">        head = head.next;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="literal">null</span>) &#123;</span><br><span class="line">            sum*=<span class="number">2</span>;</span><br><span class="line">            sum += head.val == <span class="number">0</span> ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">            head = head.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a><strong>思路</strong></h4><p>因为是顺序遍历，所以每次遍历都要给当前之和乘二，如果当前进制为1，则加1</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;LC-1290&quot;&gt;&lt;a href=&quot;#LC-1290&quot; class=&quot;headerlink&quot; title=&quot;LC_1290&quot;&gt;&lt;/a&gt;LC_1290&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;给你一个单链表的引用结点 &lt;code&gt;head&lt;/code&gt;。链表中每个结</summary>
+      
+    
+    
+    
+    
+    <category term="-leetcode" scheme="https://example.com/tags/leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LC_20250228</title>
+    <link href="https://example.com/2025/02/28/LC-20250228/"/>
+    <id>https://example.com/2025/02/28/LC-20250228/</id>
+    <published>2025-02-28T01:44:37.000Z</published>
+    <updated>2025-02-28T01:44:37.730Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SpringSecurity之UserDetails接口</title>
+    <link href="https://example.com/2025/02/27/SpringSecurity%E4%B9%8BUserDetails%E6%8E%A5%E5%8F%A3/"/>
+    <id>https://example.com/2025/02/27/SpringSecurity%E4%B9%8BUserDetails%E6%8E%A5%E5%8F%A3/</id>
+    <published>2025-02-27T05:37:36.000Z</published>
+    <updated>2025-02-27T06:20:54.231Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="UserDetails"><a href="#UserDetails" class="headerlink" title="UserDetails"></a>UserDetails</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;UserDetails&quot;&gt;&lt;a href=&quot;#UserDetails&quot; class=&quot;headerlink&quot; title=&quot;UserDetails&quot;&gt;&lt;/a&gt;UserDetails&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="SpringSecurity" scheme="https://example.com/tags/SpringSecurity/"/>
+    
+  </entry>
   
   <entry>
     <title>LC_20250226</title>
